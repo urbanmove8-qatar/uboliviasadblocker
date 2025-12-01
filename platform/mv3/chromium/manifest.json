@@ -5,19 +5,20 @@
       "32": "img/icon_32.png",
       "64": "img/icon_64.png"
     },
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_title": "👩 Urbanmove Olivia's Adblocker"
   },
-  "author": "Raymond Hill",
+  "author": "Urbanmove 8 Qatar (Forked from Raymond Hill's uBlock Origin)",
   "background": {
       "service_worker": "/js/background.js",
       "type": "module"
    },
   "commands": {
     "enter-zapper-mode": {
-      "description": "__MSG_zapperTipEnter__"
+      "description": "⚡ Enter Element Zapper Mode"
     },
     "enter-picker-mode": {
-      "description": "__MSG_pickerTipEnter__"
+      "description": "👁️ Enter Element Picker Mode"
     }
   },
   "declarative_net_request": {
@@ -25,7 +26,7 @@
     ]
   },
   "default_locale": "en",
-  "description": "__MSG_extShortDesc__",
+  "description": "👩 Urbanmove Olivia's Adblocker - A lightweight, privacy-focused content blocker. Forked from uBlock Origin Lite. GNU GPL 3.0 Licensed.",
   "host_permissions": [
     "<all_urls>"
   ],
@@ -38,7 +39,7 @@
   },
   "manifest_version": 3,
   "minimum_chrome_version": "122.0",
-  "name": "__MSG_extName__",
+  "name": "👩 Urbanmove Olivia's Adblocker",
   "options_page": "dashboard.html",
   "permissions": [
     "activeTab",
@@ -46,7 +47,7 @@
     "scripting",
     "storage"
   ],
-  "short_name": "uBO Lite",
+  "short_name": "Olivia Adblock",
   "storage": {
     "managed_schema": "managed_storage.json"
   },
