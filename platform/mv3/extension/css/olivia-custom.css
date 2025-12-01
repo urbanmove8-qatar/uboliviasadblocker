@@ -1,0 +1,345 @@
+/**
+ * 👩 Urbanmove Olivia's Adblocker - Custom UI Theme
+ * Forked from uBlock Origin Lite
+ * Licensed under GNU GPL 3.0
+ * 
+ * Custom pink/purple theme to distinguish from uBlock Origin
+ */
+
+:root.olivia-theme {
+    /* Olivia's Pink/Purple Color Palette */
+    --olivia-primary: #940299;
+    --olivia-secondary: #2b0133; 
+    --olivia-accent: #DA70D6;       /* Orchid */
+    --olivia-light: #FFB6C1;        /* Light Pink */
+    --olivia-dark: #8B008B;         /* Dark Magenta */
+    --olivia-bg: #FFF0F5;           /* Lavender Blush */
+    --olivia-text: #4A0E4E;         /* Dark Purple */
+    --olivia-success: #9370DB;      /* Medium Purple */
+    --olivia-shadow: rgba(255, 105, 180, 0.3);
+}
+
+/* Olivia's Header Branding */
+#olivia-header {
+    background: linear-gradient(135deg, var(--olivia-primary) 0%, var(--olivia-secondary) 100%);
+    padding: 12px 16px;
+    color: white;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 4px 12px var(--olivia-shadow);
+    margin: -8px -8px 0 -8px;
+}
+
+.olivia-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.olivia-icon {
+    font-size: 24px;
+    animation: olivia-wave 2s infinite;
+}
+
+@keyframes olivia-wave {
+    0%, 100% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+    60% { transform: rotate(0deg); }
+}
+
+.olivia-title {
+    font-size: 18px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.5px;
+}
+
+.olivia-tagline {
+    font-size: 10px;
+    opacity: 0.9;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Override body styling */
+body.olivia-theme {
+    background: var(--olivia-bg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Hostname bar */
+body.olivia-theme #hostname {
+    background: linear-gradient(90deg, var(--olivia-light) 0%, white 50%, var(--olivia-light) 100%);
+    color: var(--olivia-text);
+    font-weight: 600;
+    border-bottom: 2px solid var(--olivia-primary);
+    padding: 10px;
+}
+
+/* Filtering Mode Slider */
+body.olivia-theme .filteringModeSlider {
+    background: white;
+    border: 2px solid var(--olivia-primary);
+    border-radius: 25px;
+    padding: 4px;
+    box-shadow: 0 2px 8px var(--olivia-shadow);
+}
+
+body.olivia-theme .filteringModeButton > div {
+    background: linear-gradient(135deg, var(--olivia-primary), var(--olivia-accent));
+    box-shadow: 0 2px 6px var(--olivia-shadow);
+}
+
+body.olivia-theme .filteringModeSlider > span {
+    color: var(--olivia-text);
+    font-weight: 600;
+}
+
+body.olivia-theme .filteringModeSlider > span:hover {
+    background: var(--olivia-light);
+    border-radius: 4px;
+}
+
+/* Filtering Mode Text */
+body.olivia-theme #filteringModeText {
+    color: var(--olivia-text);
+    font-weight: 600;
+}
+
+body.olivia-theme #filteringModeText > span {
+    color: var(--olivia-secondary);
+    font-weight: 700;
+}
+
+/* Tool Menu */
+body.olivia-theme .toolMenu {
+    background: white;
+    border: 2px solid var(--olivia-light);
+    border-radius: 12px;
+    padding: 12px;
+    margin: 8px 0;
+    box-shadow: 0 2px 8px var(--olivia-shadow);
+}
+
+body.olivia-theme .toolMenu label {
+    color: var(--olivia-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+body.olivia-theme .tool {
+    background: var(--olivia-bg);
+    border: 2px solid var(--olivia-light);
+    color: var(--olivia-text);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    margin: 4px;
+}
+
+body.olivia-theme .tool:hover {
+    background: var(--olivia-light);
+    border-color: var(--olivia-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--olivia-shadow);
+}
+
+body.olivia-theme .tool.enabled {
+    border-color: var(--olivia-primary);
+    background: linear-gradient(135deg, var(--olivia-light) 0%, white 100%);
+}
+
+body.olivia-theme .tool .fa-icon {
+    color: var(--olivia-primary);
+    font-weight: bold;
+}
+
+body.olivia-theme .tool:hover .fa-icon {
+    color: var(--olivia-secondary);
+}
+
+/* Tool Ribbon */
+body.olivia-theme .toolRibbon {
+    background: white;
+    border: 2px solid var(--olivia-light);
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 2px 8px var(--olivia-shadow);
+}
+
+body.olivia-theme .toolRibbon .tool {
+    flex: 1;
+    text-align: center;
+}
+
+/* Caption styling */
+body.olivia-theme .caption {
+    color: var(--olivia-text);
+    font-size: 11px;
+    font-weight: 600;
+    display: block;
+    margin-top: 4px;
+}
+
+/* Links */
+body.olivia-theme a {
+    color: var(--olivia-primary);
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+body.olivia-theme a:hover {
+    color: var(--olivia-secondary);
+    text-decoration: underline;
+}
+
+/* Scrollbar styling */
+body.olivia-theme ::-webkit-scrollbar {
+    width: 10px;
+}
+
+body.olivia-theme ::-webkit-scrollbar-track {
+    background: var(--olivia-bg);
+}
+
+body.olivia-theme ::-webkit-scrollbar-thumb {
+    background: var(--olivia-primary);
+    border-radius: 5px;
+}
+
+body.olivia-theme ::-webkit-scrollbar-thumb:hover {
+    background: var(--olivia-secondary);
+}
+
+/* Main container */
+body.olivia-theme #main {
+    background: white;
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: 0 4px 20px var(--olivia-shadow);
+    border: 3px solid var(--olivia-primary);
+}
+
+/* Loading state */
+body.olivia-theme.loading::before {
+    content: "👩 Loading Olivia's Adblocker...";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--olivia-primary);
+    color: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    font-weight: 700;
+    box-shadow: 0 4px 20px var(--olivia-shadow);
+    z-index: 9999;
+}
+
+/* Badges */
+body.olivia-theme .fa-icon-badge {
+    background: var(--olivia-secondary);
+    border: 2px solid white;
+    box-shadow: 0 2px 4px var(--olivia-shadow);
+}
+
+/* Focus states */
+body.olivia-theme :focus {
+    outline: 3px solid var(--olivia-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Stats counter (if exists) */
+body.olivia-theme .stats {
+    background: linear-gradient(135deg, var(--olivia-primary) 0%, var(--olivia-accent) 100%);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-align: center;
+    margin: 8px 0;
+    box-shadow: 0 2px 8px var(--olivia-shadow);
+}
+
+/* Footer branding */
+body.olivia-theme::after {
+    content: "💖 Made with love by Urbanmove • Based on uBlock Origin";
+    display: block;
+    text-align: center;
+    padding: 8px;
+    color: var(--olivia-text);
+    font-size: 10px;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+    :root.olivia-theme {
+        --olivia-bg: #2D1B2E;
+        --olivia-text: #FFB6C1;
+    }
+    
+    body.olivia-theme {
+        background: var(--olivia-bg);
+    }
+    
+    body.olivia-theme #main {
+        background: #1A0E1B;
+        border-color: var(--olivia-primary);
+    }
+    
+    body.olivia-theme .tool {
+        background: #2D1B2E;
+        color: var(--olivia-light);
+    }
+    
+    body.olivia-theme .toolMenu,
+    body.olivia-theme .toolRibbon {
+        background: #1A0E1B;
+        border-color: var(--olivia-dark);
+    }
+}
+
+/* Animation for blocked items */
+@keyframes olivia-block {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+body.olivia-theme .blocked-indicator {
+    animation: olivia-block 0.5s ease;
+}
+
+/* Popup width adjustment */
+:root.olivia-theme body {
+    min-width: 340px;
+    max-width: 400px;
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+    #olivia-header {
+        padding: 8px 12px;
+    }
+    
+    .olivia-title {
+        font-size: 16px;
+    }
+    
+    .olivia-icon {
+        font-size: 20px;
+    }
+}
